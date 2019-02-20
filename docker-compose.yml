@@ -1,0 +1,14 @@
+# v2 syntax
+version: '2'
+services:
+  # PHP (with Caddy)
+  app:
+    build: .
+    image: app-laravel/laravel
+    network_mode: bridge
+    container_name: app-laravel
+    restart: always
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "8880:8080"
