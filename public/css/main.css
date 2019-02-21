@@ -1,0 +1,115 @@
+body{
+    background-image: url(/images/img/background-artwork-new.png);
+    background-attachment: fixed;
+}
+/* HEADER */
+
+.container-main{
+
+    width: 1170px;
+    margin: 280px auto 0 auto;
+}
+
+/* LATERAIS */
+
+.container-left,.container-right{
+    width: 246px;
+    float: left;
+    margin: 2px 0 0 0;
+}
+.left-box{
+    background-color: red;
+}
+
+.left-box .content,.right-box .content{
+    margin: -1px 20px;
+    width: 200px;
+    padding: 3px 3px;
+    background: url(/images/img/widget_bg.png) repeat-y;
+}
+
+/* CENTRO */
+
+.container-center{
+    min-height: 200px;
+    width: 648px;
+    float: left;
+    margin: 0 15px;
+}
+
+/* COMUM PARA TODOS */
+
+.border-decore-left-top{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url(/images/img/corners.png) no-repeat 0 0;
+    left: -7px;
+    top: -5px;
+}
+.border-decore-right-top{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url(/images/img/corners.png) no-repeat -64px 0;
+    right: -7px;
+    top: -5px;
+}
+.border-decore-left-bottom{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url(/images/img/corners.png) no-repeat 0 -64px;
+    left: -7px;
+    bottom: -5px;
+}
+.border-decore-right-bottom{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url(/images/img/corners.png) no-repeat -64px -64px;
+    right: -7px;
+    bottom: -5px;
+}
+.border-decore-left-top, .border-decore-right-top,.border-decore-left-bottom,.border-decore-right-bottom{
+    z-index: 5;
+}
+.content {
+    position: relative;
+    z-index: 10;
+}
+
+/* COMUM ENTRA LATERAIS E CENTRO */
+
+.container-box-center, .left-box, .right-box{
+    width: 100%;
+    background: url(/images/img/border_left.png) repeat-y left top, url(/images/img/border_right.png) repeat-y right top;
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.container-box-center .title, .left-box .title, .right-box .title {
+    background: url(/images/img/border_top.png) repeat-x center top;
+    width: 100%;
+    height: 45px;
+    position: relative;
+}
+.container-box-center .content-box .content-bg, .left-box .content-box .content-bg,.right-box .content-box .content-bg {
+    padding: 6px 8px;
+}
+
+.container-box-center .border_bottom, .left-box .border_bottom, .right-box .border_bottom  {
+    background: url(/images/img/border_bottom.png) repeat-x center bottom;
+    width: 100%;
+    display: block;
+    height: 20px;
+}
+
+.container-box-center .content-box, .left-box .content-box, .right-box .content-box{
+    width: 608px;
+    margin: -1px 20px;
+    position: relative;
+    background: url(/images/img/mid_bot.png) no-repeat center bottom, url(/images/img/mid_top.png) no-repeat center top, url(/images/img/mid_mid.png) repeat-y center top;
+    color: #531e01;
+}
+

@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return abort(403, 'Unauthorized action.');
-});
-
+// Route::get('/', function () {
+//     return abort(403, 'Unauthorized action.');
+// });
+Route::get('/', 'Home\HomeController@index');
 Route::get('/players', 'Players\PlayersController@index');
