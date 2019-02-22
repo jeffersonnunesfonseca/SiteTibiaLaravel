@@ -10,7 +10,7 @@ function createAcc(form){
 		data: {"id":idNaoEncontrado,"neighborhood_id":idBairro},
 		success: function(response){
 
-			console.log("Sinônimo saassacadastrado");
+			console.log("Sinônimo cadastrado");
 		},
 		dataType: dataType
 	});
