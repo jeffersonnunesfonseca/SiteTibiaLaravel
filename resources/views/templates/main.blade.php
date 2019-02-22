@@ -22,46 +22,53 @@
                 <div class="border-decore-right-bottom"></div>
                 <div class="border-decore-left-bottom"></div>
                 <div class='content'>
-                    ssa
                 </div>
                 <div class='border_bottom'></div>
             </div>
         </div>
 
         <div class='container-center'>
-            <div class="container-box-center">
-                <div class="border-decore-right-top"></div>
-                <div class="border-decore-left-top"></div>
-                <div class="border-decore-right-bottom"></div>
-                <div class="border-decore-left-bottom"></div>
-                <div class='title'></div>
-                <div class="content-box">
-                    <div class='content-bg'>
-                        <div class='content'>
-                            sasasa
-                        </div>
-                    </div>
-                </div>
-                <div class='border_bottom'></div>
-            </div>
+            @yield('content-body')
+
         </div>
 
         <div class='container-right'>
                 <div class='right-box'>
-                    <div class="title"></div>
+                    <div class="title"><span class='title-content'></span></div>
                     <div class="border-decore-right-top"></div>
                     <div class="border-decore-left-top"></div>
                     <div class="border-decore-right-bottom"></div>
                     <div class="border-decore-left-bottom"></div>
                     <div class='content'>
-                            sasasa
+                        <form name='frm-login'>
+                            <table>
+                                <tr>
+                                    <td><input type="text" class='inputtext' placeholder='Account number' name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class='inputtext' placeholder='Password'name="" id=""></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" class='btn-padrao' value="Login"></td>
+                                </tr>
+                                <tr>
+
+                                    <td><a href="/createacc"><input type="button" class='btn-padrao' value="Register"></a></td>
+                                </tr>
+                            </table>
+                        </form>
+                            
                     </div>
                     <div class='border_bottom'></div>
                 </div>
             </div>
     </div>
 
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="script" href="/js/app.js">
+
 </body>
+    <script src="/js/app.js"></script>
+    <script src="/js/commons.js"></script>
+    @stack('scripts')
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/main.css">
 </html>

@@ -23,7 +23,6 @@ body{
 
 .left-box .content,.right-box .content{
     margin: -1px 20px;
-    width: 200px;
     padding: 3px 3px;
     background: url(/images/img/widget_bg.png) repeat-y;
 }
@@ -113,3 +112,26 @@ body{
     color: #531e01;
 }
 
+.inputtext {
+    width: 158px;
+    height: 33px;
+    background: url(/images/img/quicklogin_input.png);
+    padding: 0 10px;
+    margin: 0 0 4px 11px;
+    border: 0 none;
+    color: #9c7d54;
+    font-size: 12px;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.btn-padrao:hover {
+    cursor: pointer;
+    background-color: #00000061;
+}
+.btn-padrao {
+    width: 120px;
+    margin: 2px 0px 5px 30px;
+    background-color: #00000082;
+    color: white;
+    border-radius: 7px 7px;
+}

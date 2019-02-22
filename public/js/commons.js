@@ -1,0 +1,1 @@
+var wwwroot = window.location.protocol + "//" + window.location.host + "/";
