@@ -17,3 +17,5 @@
 Route::get('/', 'Home\HomeController@index');
 Route::get('/createacc', 'Account\CreateAccountController@index');
 Route::get('/players', 'Players\PlayersController@index');
+
+ Route::get("/createacc/send", "Account\CreateAccountController@createAcc");
