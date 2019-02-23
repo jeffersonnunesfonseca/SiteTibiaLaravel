@@ -13,4 +13,8 @@ class Accounts extends Model
     public function getByAccountNumber(string $acc){
         return $this::where("name",$acc)->get();
     }
+
+    public function getByAccountNumberPassword(string $acc,string $password){
+        return $this::where([["name","=",$acc],["password","=",$password]])->first();
+    }    
 }

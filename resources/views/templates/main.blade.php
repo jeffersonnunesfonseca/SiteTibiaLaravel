@@ -40,16 +40,16 @@
                     <div class="border-decore-right-bottom"></div>
                     <div class="border-decore-left-bottom"></div>
                     <div class='content'>
-                        <form name='frm-login'>
+                        <form id="frm-login" method="POST">
                             <table>
                                 <tr>
-                                    <td><input type="text" class='inputtext' placeholder='Account number' name="" id=""></td>
+                                    <td><input type="text" class='inputtext' placeholder='Account number' name="account-number"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="text" class='inputtext' placeholder='Password'name="" id=""></td>
+                                    <td><input type="password" class='inputtext' placeholder='Password' name="password"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="submit" class='btn-padrao' value="Login"></td>
+                                    <td><input type="button" class='btn-padrao btn-login' value="Login"></td>
                                 </tr>
                                 <tr>
 

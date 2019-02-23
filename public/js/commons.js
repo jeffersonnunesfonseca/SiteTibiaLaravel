@@ -29,4 +29,34 @@ function checkError(type=null,field){
        }
     }    
 }
+function login(form){
+    console.log(form);
+    var url = "http://localhost/login";
+    console.log(url);
+	var dataType = "json";
+	$.ajax({
+		type: "get",
+		url: url,
+		data: form,
+		success: function(response){
+            console.log("aa");
+			if(response.status=="error")
+				checkError(response.status,response.field);
+
+				
+        },
+        error:function(response){
+            console.log(response);
+        },
+		dataType: dataType
+	});
+}
+
+$(document).ready(function(){
+    $(".btn-login").on("click",function(){
+        var form = $("#frm-login").serialize();
+        console.log("chama");
+        login(form);
+    });
+});
 

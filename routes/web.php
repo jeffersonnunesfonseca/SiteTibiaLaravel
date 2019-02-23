@@ -15,7 +15,8 @@
 //     return abort(403, 'Unauthorized action.');
 // });
 Route::get('/', 'Home\HomeController@index');
-Route::get('/createacc', 'Account\CreateAccountController@index');
+Route::get('/createacc', 'Account\AccountController@index');
 Route::get('/players', 'Players\PlayersController@index');
 
- Route::get("/createacc/send", "Account\CreateAccountController@createAcc");
+Route::get("/createacc/send", "Account\AccountController@createAcc");
+Route::get("/login", "Account\AccountController@loginAcc");
