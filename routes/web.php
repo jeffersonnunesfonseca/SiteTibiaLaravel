@@ -20,3 +20,4 @@ Route::get('/players', 'Players\PlayersController@index');
 
 Route::get("/createacc/send", "Account\AccountController@createAcc");
 Route::get("/login", "Account\AccountController@loginAcc");
+Route::get("/myaccount", "Account\MyAccountController@index");

@@ -41,9 +41,9 @@ function login(form){
 		success: function(response){
             console.log("aa");
 			if(response.status=="error")
-				checkError(response.status,response.field);
-
-				
+                checkError(response.status,response.field);
+            if(response.status =="ok")
+                location.href = "/myaccount";
         },
         error:function(response){
             console.log(response);

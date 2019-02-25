@@ -78,21 +78,17 @@ class AccountController extends Controller{
                 $result = $acc->getByAccountNumberPassword($this->request->input('account-number'),$this->request->input('password'));
                 $this->createSession($result->id,$result->name,$result->password);
 
-                $x = $this->getSession();
-                echo "<pre>";
-                print_r($x);
-                $this->deleteSession();
-                $x = $this->getSession();
-                echo "abaio";
-                print_r($x);
-
-                dd();   
+                $session = Commons::getSession($this->request);
+                if(!empty($session)){
+                    return Commons::returnJsonValidate("ok","ok");
+                }
             }
         }
     }
 
     public function logoutAcc(){
-        
+        $this->deleteSession();
+        return redirect('/');
     }
 
     private function createSession(int $id, string $name, string $password){
@@ -100,24 +96,7 @@ class AccountController extends Controller{
         $this->request->session()->put(["name"=>$name]);
         $this->request->session()->put(["password"=>$password]);
     }
-    private function deleteSession(){
-        return $this->request->session()->flush();
-    }
 
-    private function getSession(){
-        $dadosSessao = array();
-        $id         = ($this->request->session()->has("id"))?$this->request->session()->get("id"):null;
-        $name       = ($this->request->session()->has("name"))?$this->request->session()->get("name"):null;
-        $password   = ($this->request->session()->has("password"))?$this->request->session()->get("password"):null;
-
-        $dadosSessao = array(
-                            "id"=>$id,
-                            "name"=>$name,
-                            "password"=>$password
-                        );
-        
-        return $dadosSessao;
-    }
     /**
      * Prepata array para insert
      * @param array $data dados do form para preparar

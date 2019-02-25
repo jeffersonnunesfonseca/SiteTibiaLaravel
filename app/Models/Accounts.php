@@ -17,4 +17,11 @@ class Accounts extends Model
     public function getByAccountNumberPassword(string $acc,string $password){
         return $this::where([["name","=",$acc],["password","=",$password]])->first();
     }    
+    
+    public function playersById($id){
+        return $this::leftJoin('players','accounts.id','players.account_id')
+                        ->select("accounts.name as accName","players.*")
+                        ->where("accounts.id",$id)
+                        ->get();
+    }
 }

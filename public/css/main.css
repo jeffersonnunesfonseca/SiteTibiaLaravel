@@ -135,3 +135,17 @@ body{
     color: white;
     border-radius: 7px 7px;
 }
+.title{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+
+}
+
+.welcome-myaccount{
+    padding: 8px 50px 10px;
+    width: 100%;
+    background: url(/images/images/content/headline-bracer-left.gif) repeat-y left top, url(/images/images/content/headline-bracer-right.gif) repeat-y right top;
+    position: relative;
+    margin-bottom: 18px;
+}
