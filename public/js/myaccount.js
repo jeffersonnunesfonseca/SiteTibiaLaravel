@@ -22,6 +22,9 @@ function deleteCharacter(form){
 		url: url,
 		data: form,
 		success: function(response){
+        if(response.status=="size-player")
+            checkError(response.status,response.field);
+        else
             $("#frm-delete-player").html("Deletado com sucesso!<br /><a href='/myaccount'>HOME</a>");
 		},
 		dataType: dataType

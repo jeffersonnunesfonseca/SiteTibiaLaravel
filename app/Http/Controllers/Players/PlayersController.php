@@ -36,10 +36,14 @@ class PlayersController extends Controller
             if($this->request->session()->get("id")!=null && $this->validateNamePlayer($name)){
                 $array = array("deleted"=>1);
                 $deleted = $this->players->deletedPlayer($this->request->session()->get("id"),$name,$array);
-                return Commons::returnJsonValidate("ok","deleted");
-            }else{
-                return Commons::returnJsonValidate("size-player","character-name");
+                if($deleted ==1)
+                    return Commons::returnJsonValidate("ok","deleted");
+                else{
+                    return Commons::returnJsonValidate("size-player","character-name");
+                }
             }
+            else
+                return Commons::returnJsonValidate("size-player","character-name");
         }
         else
             return redirect('/');
