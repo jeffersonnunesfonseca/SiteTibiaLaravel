@@ -22,5 +22,12 @@ class Players extends Model
     public function updateById(int $id, array $data){
         return $this::where("id",$id)->update($data);
     }
+    public function deletedPlayer(int $id,string $playerName, array $data){
+        return $this::where([["account_id","=",$id],["name","=",$playerName]])->update($data);
+    }
+
+    public function getByName($name){
+        return $this::where("name",$name)->get();
+    }
 
 }

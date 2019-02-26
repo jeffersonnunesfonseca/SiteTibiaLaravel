@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
 use App\Models\Accounts;
+use App\Models\Vocations;
 use App\Helpers\Commons;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -17,20 +18,20 @@ class MyaccountController extends Controller{
 
     public function index(){
         $session = Commons::getSession($this->request);
-        if(!empty($session)){
+        if(!empty($session) && $session["id"]!=null){
             ini_set('memory_limit', '2048M');
-            // dd($session);
-            echo "<pre>";
             $data = $this->account->playersById($session["id"]);
-            print_r($data);
-            dd();
-            // $data = json_decode($this->account->getByAccountNumber($session["name"]),true);
+
             return view('myaccount')->with(compact('data'));
         }
         else{
-            dd("erro");
+            return redirect('/');
         }
     }
 
-    
+    public function vocations(){
+        $vocations = new Vocations();
+        $list = $vocations->all();
+        return $list;
+    }
 }

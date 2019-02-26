@@ -13,6 +13,12 @@ function checkError(type=null,field){
         else{
             $(".error").html("");
         }
+        if(type == "size-player"){
+            $("#"+field).css("background","red");
+        }
+        else{
+            $("#"+field).css("background","");
+        }
         if(type == "error"){
              $("#"+field).css("border","solid 1px red");
         }
@@ -21,7 +27,7 @@ function checkError(type=null,field){
         }
         if(type == "exists"){
             $("#"+field).css("border","solid 1px red");
-            $(".exists").html("Conta já existe!");
+            $(".exists").html("já existe!");
        }
        else{
            $("#"+field).css("border","");

@@ -20,8 +20,10 @@ class Accounts extends Model
     
     public function playersById($id){
         return $this::leftJoin('players','accounts.id','players.account_id')
-                        ->select("accounts.name as accName","players.*")
+                        ->leftJoin('vocations','vocations.id','players.vocation')
+                        ->select("accounts.name as accName","players.*","vocations.*")
                         ->where("accounts.id",$id)
+                        ->where("players.deleted",0)
                         ->get();
     }
 }

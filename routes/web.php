@@ -20,4 +20,9 @@ Route::get('/players', 'Players\PlayersController@index');
 
 Route::get("/createacc/send", "Account\AccountController@createAcc");
 Route::get("/login", "Account\AccountController@loginAcc");
+Route::get("/logout", "Account\AccountController@logoutAcc");
 Route::get("/myaccount", "Account\MyAccountController@index");
+Route::get("/create-character", "Players\PlayersController@createCharacter");
+Route::get("/create-character/save", "Players\PlayersController@create");
+Route::get("/delete-character", "Players\PlayersController@formDeleted");
+Route::get("/delete-character/save", "Players\PlayersController@deleteCharacter");

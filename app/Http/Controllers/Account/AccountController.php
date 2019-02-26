@@ -68,6 +68,8 @@ class AccountController extends Controller{
                 return Commons::returnJsonValidate("ok","insert");
              else
                 return Commons::returnJsonValidate("error","insert");
+        }else{
+            return redirect('/');
         }
     }
 
@@ -83,11 +85,13 @@ class AccountController extends Controller{
                     return Commons::returnJsonValidate("ok","ok");
                 }
             }
+        }else{
+            return redirect('/');
         }
     }
 
     public function logoutAcc(){
-        $this->deleteSession();
+        Commons::deleteSession($this->request);
         return redirect('/');
     }
 

@@ -3,35 +3,91 @@
 namespace App\Http\Controllers\Players;
 
 use Illuminate\Http\Request;
+use App\Helpers\Commons;
 use App\Http\Controllers\Controller;
 use App\Models\Players as PlayerModel;
 
 
 class PlayersController extends Controller
 {
-    public function index(PlayerModel $players){
-        $x = $this->create($players);
-        print_r($x);
-        die();
-        $player = $players::where("id",1)->get();
-        echo "<pre>";
-        $player->each(function ($item, $key) {
-            print_r($item);
-        });
-        echo "</pre>";
+    public function __construct(PlayerModel $players,Request $request){
+        $this->players = $players;
+        $this->request = $request;
+    }
+    public function index(){
+        return redirect('/');
+    }
+
+    public function createCharacter(){
+        if($this->request->session()->get("id"))
+            return view("create-player");
+       else
+        return redirect('/');
+    }
+    public function formDeleted(){
+        if($this->request->session()->get("id"))
+            return view("delete-player");
+        else
+            return redirect('/');
+    }
+    public function deleteCharacter(){
+        if($this->request->ajax()){    
+            $name      =  ($this->request->input('character-name'))?ucwords($this->request->input('character-name')):null;        
+            if($this->request->session()->get("id")!=null && $this->validateNamePlayer($name)){
+                $array = array("deleted"=>1);
+                $deleted = $this->players->deletedPlayer($this->request->session()->get("id"),$name,$array);
+                return Commons::returnJsonValidate("ok","deleted");
+            }else{
+                return Commons::returnJsonValidate("size-player","character-name");
+            }
+        }
+        else
+            return redirect('/');
+               
     }
     
     /**
      * insere player
      */
-    public function create(PlayerModel $player){
-        $schema = $this->setSchema();
-        $insert = $player->create($schema);
+    public function create(){
+        if($this->request->ajax()){
+            $data = array();
+            $accountId =  ($this->request->session()->get("id"))?$this->request->session()->get("id"):null;
+            if($accountId){
+                $data["id"] = (int)$accountId;
 
-        if($insert)
-             return "Inserido com sucesso " . $insert->id;
-         else
-            return "falha ao inserir";
+                $name      =  ($this->request->input('character-name'))?ucwords($this->request->input('character-name')):null;
+                $gender    =  ($this->request->input('gender'))?$this->request->input('gender'):null;
+                $vocation  =  ($this->request->input('vocation'))?$this->request->input('vocation'):null;
+                
+                if($name && $this->validateField($name)){
+                    $data["nome"] = $name;
+                }
+                else{
+                    return Commons::returnJsonValidate("size-player","character-name");
+                }
+
+                if($this->validateNamePlayer($name)){
+                    return Commons::returnJsonValidate("exists","character-name");
+                }
+
+                if($gender)
+                    $data["gender"] = ($gender == "female")?0:1;  
+                
+                if($vocation)
+                    $data["vocation"] = $vocation;
+
+                $schema = $this->setSchema($data);
+                $insert = $this->players->create($schema);
+
+                if($insert)
+                    return Commons::returnJsonValidate("ok","insert");
+                else
+                    return Commons::returnJsonValidate("error","insert");
+            }
+        }else{
+            return redirect('/');
+        }
     }
 
     /**
@@ -39,9 +95,9 @@ class PlayersController extends Controller
      */
     private function setSchema(array $data){
         $schema = array(
-            "name"       => "TESTE COM INSERT",
-            "account_id" => 9691164,
-            "vocation"   => "1",
+            "name"       =>$data["nome"],
+            "account_id" => $data["id"],
+            "vocation"   => $data["vocation"],
             "health"     => "185",
             "healthmax"  => "185",
             "experience" => "4200",
@@ -58,10 +114,22 @@ class PlayersController extends Controller
             "posy" => "51",
             "posz" => "7",
             "cap" => "400",
-            "sex" => "1",
+            "sex" => $data["gender"],
         );
         return $schema;
     }
 
+    private function validateField(string $string){
+        if(strlen($string)<4 || strlen($string)>15){
+            return false;
+        }
+        else
+            return true;
+    }
 
+    private function validateNamePlayer($name){
+        $name = json_decode($this->players->getByName($name));
+        if(!empty($name))
+            return true;
+    }
 }

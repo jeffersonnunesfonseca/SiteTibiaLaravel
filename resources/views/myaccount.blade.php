@@ -11,7 +11,7 @@
                 <div class='content'>
                     <table style="width: 100%;">
                         <tr>
-                            <th style="width:100%;text-align:center;">
+                            <th style="width:100%;text-align:center;padding: 18px 2px 7px;">
                                 <span class="welcome-myaccount">Welcome to your account!</span> 
                             </th>
                         </tr>
@@ -27,31 +27,52 @@
                         </tr>
                         <tr>
                             <td>
-                        <table class="table">
+                        <table class="table" style="width:100%;text-align:center;">
                                 <thead>
                                     <tr>
                                         <th scope="col">Name</th>
                                         <th scope="col">Status</th>
+                                        <th scope="col">Vocation</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $dados)
                                         <tr>
-                                                <td>{{$dados["id"]}}</td>
-                                                <td>Otto</td>
+                                                <td>{{$dados["name"]}}</td>
+                                                <td>{{$dados["online"]}}</td>
+                                                <td>{{$dados["vocation_name"]}}</td>
                                         </tr>
                                         
                                     @endforeach
+                                    <tr style="height: 100px;">
+                                        <td>
+                                            <br />
+                                            <button type="button" class="btn btn-primary" id="btn-create-character" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                Create character
+                                            </button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <br />
+                                            <button type="button" class="btn btn-primary" id="btn-delete-character" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                Delete character
+                                            </button>
+                                        </td>
+                                    </tr>
+            
 
                                 </tbody>
+                                
                             </table>
                             </td>
                         </tr>
- 
                     </table>
                 </div>
             </div>
         </div>
         <div class='border_bottom'></div>
     </div>
-@endsection 
+@endsection
+@push('scripts')
+    <script src="/js/myaccount.js"></script>
+@endpush
