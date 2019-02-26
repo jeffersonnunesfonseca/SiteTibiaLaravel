@@ -32,7 +32,7 @@ function deleteCharacter(form){
 }
 
 $(document).ready(function(){
-    $("#frm-login").html('<a href="/logout"><input type="button" class="btn-padrao btn-logout" value="Deslogar"></a>');
+    $("#frm-login").html('<a href="/myaccount"><input type="button" class="btn-padrao" value="MyAccount"></a><br><a href="/logout"><input type="button" class="btn-padrao btn-logout" value="Deslogar"></a>');
     $("#btn-create-character").on("click",function(){
         location.href="/create-character";
     });

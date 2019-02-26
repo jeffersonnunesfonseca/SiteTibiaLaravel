@@ -59,6 +59,10 @@ function login(form){
 }
 
 $(document).ready(function(){
+    if($("#session").val()){
+        $("#frm-login").html('<a href="/myaccount"><input type="button" class="btn-padrao" value="MyAccount"></a><br><a href="/logout"><input type="button" class="btn-padrao btn-logout" value="Deslogar"></a>');
+    }
+
     $(".btn-login").on("click",function(){
         var form = $("#frm-login").serialize();
         console.log("chama");
