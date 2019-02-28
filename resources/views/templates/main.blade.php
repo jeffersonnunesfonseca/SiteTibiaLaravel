@@ -8,7 +8,6 @@
 <head>
     <input type="hidden" id="session" value="@if ( Session::get('id')) {{ Session::get('id')    }} @endif">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')Old Styller</title>
     <div class='header'></div>
