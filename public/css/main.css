@@ -184,11 +184,12 @@ body{
     }
     .container-left{
         position: absolute;
-        top: 100%
+        top: 105%;
+        left: 50px;
     }
     .container-right{
         position: absolute;
-        top: 100%;
+        top: 105%;
         right: -233px;
       
     }
