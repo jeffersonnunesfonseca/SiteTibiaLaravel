@@ -15,17 +15,72 @@
 <body>
     <div class='container-main'>
         <div class='container-left'>
+            {{-- BOX NEWS --}}
             <div class='left-box'>
-                <div class="title"></div>
+                <div class="title">News</div>
                 <div class="border-decore-right-top"></div>
                 <div class="border-decore-left-top"></div>
                 <div class="border-decore-right-bottom"></div>
                 <div class="border-decore-left-bottom"></div>
                 <div class='content'>
+                    <div class='div-content'>
+                        <a href="/">Home</a>
+                        <br>
+                        <a href="#">Downloads</a>
+                    </div>
+                </div>
+                <div class='border_bottom'></div>
+            </div>
+            {{-- BOX ACCOUNT --}}
+            <div class='left-box'>
+                <div class="title">Account</div>
+                <div class="border-decore-right-top"></div>
+                <div class="border-decore-left-top"></div>
+                <div class="border-decore-right-bottom"></div>
+                <div class="border-decore-left-bottom"></div>
+                <div class='content'>
+                    <div class='div-content'>
+                        <a href="/createacc">Create Account</a>
+                        <br>
+                        <a href="#">Lost Account</a>
+                    </div>
+                </div>
+                <div class='border_bottom'></div>
+            </div>
+            {{--COMMUNITY  --}}
+            <div class='left-box'>
+                <div class="title">Community</div>
+                <div class="border-decore-right-top"></div>
+                <div class="border-decore-left-top"></div>
+                <div class="border-decore-right-bottom"></div>
+                <div class="border-decore-left-bottom"></div>
+                <div class='content'>
+                    <div class='div-content'>
+                        <a href="#">Characters</a>
+                        <br>
+                        <a href="#">Highscore</a>
+                        <br>
+                        <a href="#">Guilds</a>
+                    </div>
+                </div>
+                <div class='border_bottom'></div>
+            </div>
+            {{--LIBRARIES  --}}
+            <div class='left-box'>
+                <div class="title">Library</div>
+                <div class="border-decore-right-top"></div>
+                <div class="border-decore-left-top"></div>
+                <div class="border-decore-right-bottom"></div>
+                <div class="border-decore-left-bottom"></div>
+                <div class='content'>
+                    <div class='div-content'>
+                        <a href="#">Server Info</a>
+                    </div>
                 </div>
                 <div class='border_bottom'></div>
             </div>
         </div>
+    </div>
 
         <div class='container-center'>
             @yield('content-body')
@@ -62,10 +117,10 @@
                     <div class='border_bottom'></div>
                 </div>
             </div>
+         
     </div>
-
-
 </body>
+<div class='footer'>Desenvolvido por <br /> Jefferson Nunes Fonseca</div>
     <script src="/js/app.js"></script>
     <script src="/js/commons.js"></script>
     @stack('scripts')

@@ -6,10 +6,11 @@
         <div class="border-decore-left-top"></div>
         <div class="border-decore-right-bottom"></div>
         <div class="border-decore-left-bottom"></div>
-        <div class='title'></div>
+        <div class='title'>Notícias</div>
         <div class="content-box">
             <div class='content-bg'>
                 <div class='content'>
+                    <h1>Sejam bem vindos ao OLD STYLLER</h1>
                 </div>
             </div>
         </div>
