@@ -172,7 +172,7 @@ body{
 @media screen and (max-width: 600px) {
     .footer {
         width: 133%;
-        bottom: -550px;
+        bottom: -600px;
         background: black;
         left: 69px;
     }
