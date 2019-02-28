@@ -48,6 +48,9 @@ function login(form){
                 checkError(response.status,response.field);
             if(response.status =="ok")
                 location.href = "/myaccount";
+            if(response.status =="notacc")
+                location.href = "/createacc";
+            
         },
         error:function(response){
         },
