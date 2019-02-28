@@ -118,11 +118,11 @@
                     <div class='border_bottom'></div>
                 </div>
             </div>
-         
     </div>
+
 </body>
-<div class='footer'>Desenvolvido por <br /> Jefferson Nunes Fonseca</div>
-    <script src="/js/app.js"></script>
+<div class='footer'>Desenvolvido por Jefferson Nunes Fonseca</div>   
+<script src="/js/app.js"></script>
     <script src="/js/commons.js"></script>
     @stack('scripts')
     <link rel="stylesheet" href="/css/app.css">
