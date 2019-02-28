@@ -172,7 +172,7 @@ body{
 @media screen and (max-width: 600px) {
     .footer {
         width: 133%;
-        bottom: -500px;
+        bottom: -550px;
         background: black;
         left: 69px;
     }
@@ -185,11 +185,11 @@ body{
     .container-left{
         position: absolute;
         left: 104%;
-        top: 90%
+        top: 100%
     }
     .container-right{
         position: absolute;
-        top: 94%;
+        top: 100%;
       
     }
   }
