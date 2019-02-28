@@ -79,7 +79,6 @@ class AccountController extends Controller{
     }
 
     public function loginAcc(){
-        if($this->request->ajax()){      
             if($this->request->input('account-number') && $this->request->input('account-number')!=1 && $this->request->input('password') && $this->request->input('password')!=1){
                 
                 $acc = new Accounts();
@@ -91,8 +90,8 @@ class AccountController extends Controller{
                     return Commons::returnJsonValidate("ok","ok");
                 }
             }
-        }else{
-            return redirect('/');
+            else{
+                return Commons::returnJsonValidate("notacc","error");
         }
     }
 
