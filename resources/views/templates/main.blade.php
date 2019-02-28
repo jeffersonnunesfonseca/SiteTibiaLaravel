@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <input type="hidden" id="session" value="@if ( Session::get('id')) {{ Session::get('id')    }} @endif">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,7 +27,7 @@
                     <div class='div-content'>
                         <a href="/">Home</a>
                         <br>
-                        <a href="#">Downloads</a>
+                        <a href="/downloads">Downloads</a>
                     </div>
                 </div>
                 <div class='border_bottom'></div>
@@ -42,7 +43,7 @@
                     <div class='div-content'>
                         <a href="/createacc">Create Account</a>
                         <br>
-                        <a href="#">Lost Account</a>
+                        <a href="/lost">Lost Account</a>
                     </div>
                 </div>
                 <div class='border_bottom'></div>
@@ -56,11 +57,11 @@
                 <div class="border-decore-left-bottom"></div>
                 <div class='content'>
                     <div class='div-content'>
-                        <a href="#">Characters</a>
+                        <a href="/characters">Characters</a>
                         <br>
-                        <a href="#">Highscore</a>
+                        <a href="/highscore">Highscore</a>
                         <br>
-                        <a href="#">Guilds</a>
+                        <a href="/guild">Guilds</a>
                     </div>
                 </div>
                 <div class='border_bottom'></div>
@@ -74,7 +75,7 @@
                 <div class="border-decore-left-bottom"></div>
                 <div class='content'>
                     <div class='div-content'>
-                        <a href="#">Server Info</a>
+                        <a href="/serverinfo">Server Info</a>
                     </div>
                 </div>
                 <div class='border_bottom'></div>

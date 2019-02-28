@@ -14,6 +14,14 @@
 // Route::get('/', function () {
 //     return abort(403, 'Unauthorized action.');
 // });
+Route::view('/downloads', 'downloads');
+Route::view('/guild', 'guild');
+Route::view('/highscore', 'highscore');
+Route::view('/lost', 'lostaccount');
+Route::view('/serverinfo', 'serverinfo');
+Route::view('/characters', 'characters');
+
+
 Route::get('/', 'Home\HomeController@index');
 Route::get('/createacc', 'Account\AccountController@index');
 Route::get('/players', 'Players\PlayersController@index');

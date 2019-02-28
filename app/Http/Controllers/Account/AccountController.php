@@ -16,7 +16,12 @@ class AccountController extends Controller{
     }
 
     public function index(){
-        return view("create-acc");
+        $session = Commons::getSession($this->request);
+        if(!empty($session) && $session["id"]!=null){
+            return redirect('/myaccount');
+        }
+        else
+            return view("create-acc");
     }
 
     /**
