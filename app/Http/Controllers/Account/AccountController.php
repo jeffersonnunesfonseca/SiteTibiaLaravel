@@ -80,7 +80,8 @@ class AccountController extends Controller{
 
     public function loginAcc(){
         if($this->request->ajax()){      
-            if($this->request->input('account-number') && $this->request->input('password')){
+            if($this->request->input('account-number') && $this->request->input('account-number')!=1 && $this->request->input('password') && $this->request->input('password')!=1){
+                
                 $acc = new Accounts();
                 $result = $acc->getByAccountNumberPassword($this->request->input('account-number'),$this->request->input('password'));
                 $this->createSession($result->id,$result->name,$result->password);
