@@ -12,10 +12,10 @@
                 <div class='content'>
                     <ul>
                         <li>
-                            Tibia 8.6 - <a href="https://drive.google.com/open?id=1qW4d77FP4ZwVu2gc2GAtgmnfjGLKMhT1">GOOGLE DRIVE TIBIA 8.6</a>
+                            Tibia 8.6 - <a href="https://drive.google.com/open?id=1qW4d77FP4ZwVu2gc2GAtgmnfjGLKMhT1" target="_blank" >GOOGLE DRIVE TIBIA 8.6</a>
                         </li>
                         <li>
-                            IpChanger - <a href="https://drive.google.com/open?id=1NsujfumAII2aYJmAAZvpEPoE2hRssE8L">GOOGLE DRIVE IPCHANGER 8.6</a>
+                            IpChanger - <a href="https://drive.google.com/open?id=1NsujfumAII2aYJmAAZvpEPoE2hRssE8L" target="_blank" >GOOGLE DRIVE IPCHANGER 8.6</a>
                         </li>
                     </ul>
                 </div>
